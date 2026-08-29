@@ -1,0 +1,56 @@
+<!DOCTYPE html> <!-- Tells the browser this is an HTML5 document -->
+
+<html lang="en"> <!-- Root element of the HTML document; language is English -->
+
+<head>
+    <meta charset="UTF-8"> <!-- Sets character encoding to UTF-8 -->
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Makes the page responsive on different screen sizes -->
+
+    <title>DOM | Chai or Code</title> <!-- Title shown in the browser tab -->
+</head>
+
+<body style="background-color: black; color: white">
+    <!-- Body of the page with black background and white text -->
+</body>
+
+<script>
+
+    const div = document.createElement('div')
+    // Creates a new <div> element in memory (not yet added to the page)
+
+    // console.log(div);
+    // Prints the newly created div in the console
+
+    div.className = "main"
+    // Adds the class "main" to the div
+
+    div.id = Math.floor(Math.random() * 10 + 1)
+    // Generates a random number from 1 to 10 and assigns it as the div's id
+
+    div.setAttribute("title", "generatedTiltle")
+    // Adds a title attribute to the div
+    // Hovering over the div will show this title
+
+    div.style.backgroundColor = "green"
+    // Sets the div's background color to green
+
+    div.style.padding = "12px"
+    // Adds 12px padding inside the div
+
+    // div.innerHTML = "Chai aur Code"
+    // Adds text using innerHTML, not a good practice since overwrites the old value
+
+    const addText = document.createTextNode("Chai aur Code")
+    // Creates a text node containing "Chai aur Code" 
+
+    div.appendChild(addText)
+    // Adds the text node inside the div
+
+    document.body.appendChild(div)
+    // Adds the div to the body, making it visible on the webpage
+
+</script>
+
+</html>
