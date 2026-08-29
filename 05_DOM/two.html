@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body style = "background-color: black; color : white">
+    <div class="parent">
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">Wednesday</div>
+        <div class="day">Thursday</div>
+    </div>
+</body>
+<script>
+    const parent = document.querySelector('.parent')
+    // console.log(parent)
+    // console.log(parent.children)// return html collection
+    // console.log(parent.children[1])
+    // console.log(parent.children[1].innerHTML)
+    for (let index = 0; index < parent.children.length; index++) {
+        const element = parent.children[index].innerHTML;
+        //console.log(element)
+    }
+    parent.children[1].style.color = "orange"
+    // console.log(parent.firstElementChild);
+    // console.log(parent.lastElementChild);
+
+    const day1 = document.querySelector('.day')
+    //console.log(day1);
+    //console.log(day1.parentElement);
+    //console.log(day1.nextElementSibling);
+
+    console.log("Nodes: ", parent.childNodes);
+    // childNodes returns ALL types of nodes, including text nodes (spaces and line breaks)
+    // Example:
+    // 0 → text
+    // 1 → div.day (Monday)
+    // 2 → text
+    // 3 → div.day (Tuesday)
+    // 4 → text
+    // 5 → div.day (Wednesday)
+    // 6 → text
+    // 7 → div.day (Thursday)
+    // 8 → text
+    // length → 9
+
+    // children returns ONLY HTML elements
+    // parentElement.children → div.day, div.day, div.day, div.day
+    // parentElement.children.length → 4
+
+    // firstChild can return a text node because of whitespace/new lines
+    // parentElement.firstChild → #text
+
+    // firstElementChild ignores text nodes and returns the first HTML element
+    // parentElement.firstElementChild → <div class="day">Monday</div>
+
+</script>
+</html>
