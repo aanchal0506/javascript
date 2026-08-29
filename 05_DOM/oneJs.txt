@@ -1,0 +1,95 @@
+To get an element by its ID
+    document.getElementById('title')
+
+Get name of id 
+    document.getElementById('title').id
+    'title'
+
+Get name of class
+    document.getElementById('title').class
+    undefined
+
+Get name of className
+    document.getElementById('title').className
+    'heading'
+
+Get attribute 
+    document.getElementById('title').getAttribute
+    ƒ getAttribute() { [native code] }
+
+Get attribute id
+    document.getElementById('title').getAttribute('id')
+    'title'
+
+Get attribute class
+    document.getElementById('title').getAttribute('class')
+    'heading'
+
+set attribute class
+    document.getElementById('title').setAttribute('class','test')
+    undefined
+    overides the name given earlier
+
+To assign name for easy call
+    const title = document.getElementById('title')
+
+To give style to title
+    title.style//shows all the style
+    title.style.backgroundColor = 'green'
+    title.style.padding = "15px"
+    title.style.borderRadius = "15px"
+
+To access only visible text
+    title.innerText
+    'Dom(document object model) learning on chai or code'
+
+To access all the visible and invisible texy
+    title.textContent
+    'Dom(document object model) learning on chai or code\n\ntext test\n\n        '
+
+To access text content with innerHTML 
+    title.innerHTML
+    'Dom(document object model) learning on chai or code\n<span style="display : none">\ntext test\n</span>\n 
+ 
+To get first tag like h1, div etc 
+    document.querySelector('h1')
+
+To get all tag of h1 , div etc
+    document.querySelectorAll('h1')
+
+querySelector 
+    #=>ID
+    .=>class
+    
+To select input 
+    document.querySelector('input[type="password"]')
+
+
+To convert an element of list to be green
+    const myList = document.querySelector('ul')
+    const turnGreen = myList.querySelector('li')
+     turnGreen.style.backgroundColor = "green"
+     turnGreen.style.padding = "15px"
+     turnGreen.innerHTML
+     turnGreen.innerHTML = 'five'
+
+    const myList = document.querySelectorAll('li')=>return a NodeList(not like array)
+    when you choose multiple tags you need to specify on what to work 
+    myList[1].style.color = 'green'
+
+======querySelector  return  a single element 
+        querySelectorAll returns a nodeList of elements even though it is a single element
+        To access whole NodeList we use for each loop
+        myList.forEach(function (l){
+        l.style.backgroundColor='red'
+        })
+
+When you get element by className, it returns HTML collection
+    document.getElementsByClassName('list-item')
+    HTMLCollection(5) [li.list-item, li.list-item, li.list-item, li.list-item, li.list-item]
+    To loop over HTML collection you need to conver it into array
+    const tempClassList = document.getElementsByClassName('list-item')
+    const arr = Array.from(tempClassList)
+    arr.forEach(function (li) {
+    li.style.color = 'orange'  
+    })
